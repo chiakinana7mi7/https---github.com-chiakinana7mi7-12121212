@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_bbs</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <p>留言板:</p>
+    <textarea name="bbs" id="bbs" cols="30" rows="10"></textarea>
+    <button>发布</button>
+    <p>评论区:</p>
+    <ul></ul>
+   
+</body>
+</html>
+ <script >var ul = document.querySelector('ul');
+var text = document.querySelector('textarea');
+var btn = document.querySelector('button')
+btn.onclick = function() {
+    if (text.value == '') {
+        alert('您没有输入内容');
+        return false;
+    }else {
+        var li = document.createElement('li');
+        li.innerHTML = text.value;
+        ul.insertBefore(li,ul.children[0]);
+    }
+}</script>
